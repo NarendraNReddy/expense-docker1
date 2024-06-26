@@ -9,9 +9,9 @@ volumes:
        # docker volume create myqsl
 services:
   mysql:
-    build:
-      context: ./DB
-      dockerfile: Dockerfile
+    # build:
+    #   context: ./DB
+    #   dockerfile: Dockerfile
 
     #image: mysql:v1.0.0
     image: joindevops/mysql:v1.0
@@ -26,9 +26,9 @@ services:
       target: /var/lib/mysql
       type: volume # -v volume-name:/path/in/container
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    # build:
+    #   context: ./backend
+    #   dockerfile: Dockerfile
     #image: backend:v1.0.0
     image: joindevops/backend:v1.0
     container_name: backend
@@ -36,9 +36,9 @@ services:
     depends_on: 
     - mysql
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile  
+    # build:
+    #   context: ./frontend
+    #   dockerfile: Dockerfile  
     #image: frontend:v1.0.0
     image: joindevops/frontend:v1.0
     container_name: frontend
